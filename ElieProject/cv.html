@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | CV</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="cv.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header with Navigation -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">Portfolio</a>
+        </div>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a>
+			<li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+  <!-- User switcher for desktop -->
+<div class="user-switcher" id="userSwitcher">
+  <button class="user-switch-btn" id="userSwitchBtn">
+    <i class="fas fa-user-circle"></i>
+    <span id="currentUser">Andrew Chahine</span>
+    <i class="fas fa-chevron-down"></i>
+  </button>
+  <div class="user-dropdown" id="userDropdown">
+    <div class="user-option active" data-username="Andrew Chahine">
+      <i class="fas fa-user"></i>
+      <span>Andrew Chahine</span>
+    </div>
+    <div class="user-option" data-username="Elie Matta">
+      <i class="fas fa-user"></i>
+      <span>Elie Matta</span>
+    </div>
+    <div class="user-option" data-username="Jhon aun ">
+      <i class="fas fa-user"></i>
+      <span>Jhon aun </span>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile version of the user switcher (added via JavaScript) -->
+<script>
+// This script will be executed by main.js but is included here for reference
+function setupMobileUserSwitcher() {
+  const mobileNav = document.getElementById('mobileNav');
+  const mobileNavList = document.querySelector('.mobile-nav-list');
+  
+  if (!mobileNav || !mobileNavList) return;
+  
+  // Create mobile user switcher if it doesn't exist
+  if (!document.querySelector('.mobile-user-switcher')) {
+    const currentUser = localStorage.getItem('currentUser') || 'Andrew Chahine';
+    
+    const mobileUserSwitcher = document.createElement('div');
+    mobileUserSwitcher.className = 'mobile-user-switcher';
+    mobileUserSwitcher.innerHTML = `
+      <div class="mobile-user-label">Switch User:</div>
+      <div class="mobile-user-options">
+        <div class="mobile-user-option ${currentUser === 'Andrew Chahine' ? 'active' : ''}" data-username="Andrew Chahine">
+          <i class="fas fa-user"></i>
+          <span>Andrew Chahine</span>
+        </div>
+        <div class="mobile-user-option ${currentUser === 'Elie Matta' ? 'active' : ''}" data-username="Elie Matta">
+          <i class="fas fa-user"></i>
+          <span>Elie Matta</span>
+        </div>
+        <div class="mobile-user-option ${currentUser === 'Jhon aun ' ? 'active' : ''}" data-username="Jhon aun ">
+          <i class="fas fa-user"></i>
+          <span>Jhon aun </span>
+        </div>
+      </div>
+    `;
+    
+    // Insert before mobile nav list
+    mobileNav.insertBefore(mobileUserSwitcher, mobileNavList);
+  }
+}
+</script>
+  
+  <!-- Single dark mode toggle -->
+  <div class="mode-toggle" id="modeToggle">
+    <i class="fas fa-moon"></i>
+  </div>
+  
+  
+  
+  <!-- Mobile menu button -->
+  <button class="mobile-menu-btn" id="mobileMenuBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li class="mobile-extras">
+        <a href="cv.html" class="active">View CV</a>
+        <a href="quiz.html">Take Quiz</a>
+        <a href="schedule.html">My Schedule</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- CV Header Section -->
+  <section class="cv-header">
+    <div class="container">
+      <div class="cv-header-content">
+        <div class="cv-profile">
+          <div class="cv-profile-image">
+            <img src="images/profile.jpg" alt="Profile Image">
+          </div>
+          <div class="cv-profile-info">
+            <h1>Andrew Chahine</h1>
+            <p class="cv-title">Software Developer & UI/UX Designer</p>
+            <div class="cv-contact-info">
+              <div class="cv-contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>Andrew Chahine@example.com</span>
+              </div>
+              <div class="cv-contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+1 (206) 555-7890</span>
+              </div>
+              <div class="cv-contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Seattle, Washington</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cv-actions">
+          <button class="btn btn-primary" id="downloadCV">
+            <i class="fas fa-download"></i> Download CV
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV Content -->
+  <section class="cv-content section-padding">
+    <div class="container">
+      <div class="cv-grid">
+        <!-- Left Column -->
+        <div class="cv-column left-column">
+          <!-- About Me Section -->
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div class="cv-card-icon">
+                <i class="fas fa-user"></i>
+              </div>
+              <h2>About Me</h2>
+            </div>
+            <div class="cv-card-content">
+              <p>I'm a passionate full-stack developer with a strong focus on creating intuitive and efficient digital solutions. With 3 years of professional experience, I specialize in modern web technologies and user interface design.</p>
+              <p>Currently based in Seattle, I'm pursuing my Master's degree in Computer Science while working on freelance projects. My approach combines technical expertise with creative problem-solving to deliver exceptional user experiences.</p>
+            </div>
+          </div>
+
+          <!-- Education Section -->
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div class="cv-card-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h2>Education</h2>
+            </div>
+            <div class="cv-card-content">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-date">2023 - Present</div>
+                  <div class="timeline-content">
+                    <h3>Master of Science in Computer Science</h3>
+                    <p class="timeline-institution">University of Washington</p>
+                    <p>Specializing in Human-Computer Interaction and Artificial Intelligence</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-date">2019 - 2023</div>
+                  <div class="timeline-content">
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <p class="timeline-institution">Seattle Pacific University</p>
+                    <p>Minor in Digital Media. GPA: 3.85/4.0</p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-date">2018</div>
+                  <div class="timeline-content">
+                    <h3>Web Development Bootcamp</h3>
+                    <p class="timeline-institution">Code Fellows</p>
+                    <p>Intensive 12-week program focused on full-stack JavaScript development</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills Section -->
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div class="cv-card-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h2>Technical Skills</h2>
+            </div>
+            <div class="cv-card-content">
+              <div class="skills-container">
+                <div class="skill-category">
+                  <h3>Programming Languages</h3>
+                  <div class="skill-tags">
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">SQL</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h3>Frameworks & Libraries</h3>
+                  <div class="skill-tags">
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Express</span>
+                    <span class="skill-tag">Vue.js</span>
+                    <span class="skill-tag">Django</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">Tailwind CSS</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h3>Tools & Technologies</h3>
+                  <div class="skill-tags">
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Firebase</span>
+                    <span class="skill-tag">RESTful APIs</span>
+                    <span class="skill-tag">GraphQL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Languages Section -->
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div class="cv-card-icon">
+                <i class="fas fa-language"></i>
+              </div>
+              <h2>Languages</h2>
+            </div>
+            <div class="cv-card-content">
+              <div class="language-list">
+                <div class="language-item">
+                  <span class="language-name">English</span>
+                  <div class="language-level">
+                    <div class="level-dots">
+                      <span class="dot active"></span>
+                      <span class="dot active"></span>
+                      <span class="dot active"></span>
+                      <span class="dot active"></span>
+                      <span class="dot active"></span>
+                    </div>
+                    <span class="level-text">Native</span>
+                  </div>
+                </div>
+                <div class="language-item">
+                  <span class="language-name">Spanish</span>
+                  <div class="language-level">
+                    <div class="level-dots">
+                      <span class="dot active"></span>
+                      <span class="dot active"></span>
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                    <span class="level-text">Intermediate</span>
+                  </div>
+                </div>
+                <div class="language-item">
+                  <span class="language-name">French</span>
+                  <div class="language-level">
+                    <div class="level-dots">
+                      <span class="dot active"></span>
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                    </div>
+                    <span class="level-text">Basic</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="cv-column right-column">
+          <!-- Experience Section -->
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div class="cv-card-icon">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <h2>Work Experience</h2>
+            </div>
+            <div class="cv-card-content">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-date">2022 - Present</div>
+                  <div class="timeline-content">
+                    <h3>Front-End Developer</h3>
+                    <p class="timeline-institution">TechInnovate Inc.</p>
+                    <ul class="timeline-duties">
+                      <li>Develop and maintain responsive web applications using React.js and TypeScript</li>
+                      <li>Collaborate with UI/UX designers to implement visually appealing interfaces</li>
+                      <li>Optimize application performance and ensure cross-browser compatibility</li>
+                      <li>Implement unit and integration tests using Jest and React Testing Library</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-date">2020 - 2022</div>
+                  <div class="timeline-content">
+                    <h3>Junior Full-Stack Developer</h3>
+                    <p class="timeline-institution">WebSolve Solutions</p>
+                    <ul class="timeline-duties">
+                      <li>Developed both client and server-side applications using Node.js and React</li>
+                      <li>Created and maintained RESTful APIs and database models</li>
+                      <li>Participated in Agile development cycles and code reviews</li>
+                      <li>Assisted in the deployment and monitoring of web applications</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-dot"></div>
+                  <div class="timeline-date">2019 - 2020</div>
+                  <div class="timeline-content">
+                    <h3>Web Development Intern</h3>
+                    <p class="timeline-institution">Digital Frontier</p>
+                    <ul class="timeline-duties">
+                      <li>Assisted in the development of client websites using HTML, CSS, and JavaScript</li>
+                      <li>Learned and implemented modern web development practices and tooling</li>
+                      <li>Contributed to team projects under the guidance of senior developers</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projects Section -->
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div class="cv-card-icon">
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <h2>Projects</h2>
+            </div>
+            <div class="cv-card-content">
+              <div class="project-list">
+                <div class="project-item">
+                  <h3>E-commerce Dashboard</h3>
+                  <p class="project-description">A comprehensive dashboard for e-commerce analytics with real-time data visualization.</p>
+                  <div class="project-technologies">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">Chart.js</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="#" target="_blank" class="project-link"><i class="fas fa-link"></i> Live Demo</a>
+                    <a href="#" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                  </div>
+                </div>
+                <div class="project-item">
+                  <h3>Fitness Tracker App</h3>
+                  <p class="project-description">A cross-platform mobile application for tracking workouts and nutrition.</p>
+                  <div class="project-technologies">
+                    <span class="tech-tag">Flutter</span>
+                    <span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">RESTful API</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="#" target="_blank" class="project-link"><i class="fas fa-link"></i> Live Demo</a>
+                    <a href="#" target="_blank" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                  </div>
+                </div>
+                <div class="project-item">
+                  <h3>Banking App Redesign</h3>
+                  <p class="project-description">Complete redesign of a banking application with improved user experience and accessibility.</p>
+                  <div class="project-technologies">
+                    <span class="tech-tag">Figma</span>
+                    <span class="tech-tag">Usability Testing</span>
+                    <span class="tech-tag">Prototyping</span>
+                  </div>
+                  <div class="project-links">
+                    <a href="#" target="_blank" class="project-link"><i class="fas fa-link"></i> Case Study</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications Section -->
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div class="cv-card-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h2>Certifications</h2>
+            </div>
+            <div class="cv-card-content">
+              <div class="certification-list">
+                <div class="certification-item">
+                  <div class="certification-logo">
+                    <i class="fab fa-aws"></i>
+                  </div>
+                  <div class="certification-info">
+                    <h3>AWS Certified Developer - Associate</h3>
+                    <p>Amazon Web Services • 2023</p>
+                  </div>
+                </div>
+                <div class="certification-item">
+                  <div class="certification-logo">
+                    <i class="fab fa-react"></i>
+                  </div>
+                  <div class="certification-info">
+                    <h3>React Developer Certification</h3>
+                    <p>Meta • 2022</p>
+                  </div>
+                </div>
+                <div class="certification-item">
+                  <div class="certification-logo">
+                    <i class="fab fa-google"></i>
+                  </div>
+                  <div class="certification-info">
+                    <h3>Google UX Design Professional Certificate</h3>
+                    <p>Google • 2021</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- References Section -->
+          <div class="cv-card">
+            <div class="cv-card-header">
+              <div class="cv-card-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h2>References</h2>
+            </div>
+            <div class="cv-card-content">
+              <div class="references-list">
+                <div class="reference-item">
+                  <h3>Sarah Johnson</h3>
+                  <p class="reference-position">Senior Developer at TechInnovate Inc.</p>
+                  <div class="reference-contact">
+                    <span><i class="fas fa-envelope"></i> sarah.johnson@example.com</span>
+                    <span><i class="fas fa-phone"></i> Available upon request</span>
+                  </div>
+                </div>
+                <div class="reference-item">
+                  <h3>Mark Williams</h3>
+                  <p class="reference-position">Project Manager at WebSolve Solutions</p>
+                  <div class="reference-contact">
+                    <span><i class="fas fa-envelope"></i> mark.williams@example.com</span>
+                    <span><i class="fas fa-phone"></i> Available upon request</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cv-cta">
+    <div class="container">
+      <div class="cv-cta-content">
+        <h2>Interested in Working Together?</h2>
+        <p>Let's discuss how I can contribute to your project or team.</p>
+        <div class="cv-cta-buttons">
+          <a href="index.html#contact" class="btn btn-primary">Contact Me</a>
+          <a href="schedule.html" class="btn btn-outline">View My Schedule</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html">Portfolio</a>
+        </div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="cv.html" class="active">CV</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <a href="#" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Portfolio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button id="scrollToTop" class="scroll-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+  <script src="cv.js"></script>
+</body>
+</html>
