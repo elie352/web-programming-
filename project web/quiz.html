@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Programming Quiz</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="quiz.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header with Navigation -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">Portfolio</a>
+        </div>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+  <!-- User switcher for desktop -->
+<div class="user-switcher" id="userSwitcher">
+  <button class="user-switch-btn" id="userSwitchBtn">
+    <i class="fas fa-user-circle"></i>
+    <span id="currentUser">Andrew Chahine</span>
+    <i class="fas fa-chevron-down"></i>
+  </button>
+  <div class="user-dropdown" id="userDropdown">
+    <div class="user-option active" data-username="Andrew Chahine">
+      <i class="fas fa-user"></i>
+      <span>Andrew Chahine</span>
+    </div>
+    <div class="user-option" data-username="Elie Matta">
+      <i class="fas fa-user"></i>
+      <span>Elie Matta</span>
+    </div>
+    <div class="user-option" data-username="John Aoun">
+      <i class="fas fa-user"></i>
+      <span>John Aoun</span>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile version of the user switcher (added via JavaScript) -->
+<script>
+// This script will be executed by main.js but is included here for reference
+function setupMobileUserSwitcher() {
+  const mobileNav = document.getElementById('mobileNav');
+  const mobileNavList = document.querySelector('.mobile-nav-list');
+  
+  if (!mobileNav || !mobileNavList) return;
+  
+  // Create mobile user switcher if it doesn't exist
+  if (!document.querySelector('.mobile-user-switcher')) {
+    const currentUser = localStorage.getItem('currentUser') || 'Andrew Chahine';
+    
+    const mobileUserSwitcher = document.createElement('div');
+    mobileUserSwitcher.className = 'mobile-user-switcher';
+    mobileUserSwitcher.innerHTML = `
+      <div class="mobile-user-label">Switch User:</div>
+      <div class="mobile-user-options">
+        <div class="mobile-user-option ${currentUser === 'Andrew Chahine' ? 'active' : ''}" data-username="Andrew Chahine">
+          <i class="fas fa-user"></i>
+          <span>Andrew Chahine</span>
+        </div>
+        <div class="mobile-user-option ${currentUser === 'Elie Matta' ? 'active' : ''}" data-username="Elie Matta">
+          <i class="fas fa-user"></i>
+          <span>Elie Matta</span>
+        </div>
+        <div class="mobile-user-option ${currentUser === 'User 3' ? 'active' : ''}" data-username="User 3">
+          <i class="fas fa-user"></i>
+          <span>User 3</span>
+        </div>
+      </div>
+    `;
+    
+    // Insert before mobile nav list
+    mobileNav.insertBefore(mobileUserSwitcher, mobileNavList);
+  }
+}
+</script>
+  
+  
+  
+  
+  <!-- Mobile menu button -->
+  <button class="mobile-menu-btn" id="mobileMenuBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li class="mobile-extras">
+        <a href="cv.html">View CV</a>
+        <a href="quiz.html" class="active">Take Quiz</a>
+        <a href="schedule.html">My Schedule</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Quiz Container -->
+  <div class="quiz-container">
+    <!-- Welcome Screen -->
+    <div class="quiz-screen" id="welcomeScreen">
+      <div class="quiz-welcome">
+        <div class="quiz-welcome-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h1>Web Development Knowledge Quiz</h1>
+        <p>Test your knowledge of modern web development concepts, programming languages, and best practices. This quiz contains 10 questions and has a time limit of 5 minutes.</p>
+        
+        <div class="quiz-info">
+          <div class="quiz-info-item">
+            <i class="fas fa-question-circle"></i>
+            <span>10 Questions</span>
+          </div>
+          <div class="quiz-info-item">
+            <i class="fas fa-clock"></i>
+            <span>5 Minutes</span>
+          </div>
+          <div class="quiz-info-item">
+            <i class="fas fa-star"></i>
+            <span>Difficulty: Medium</span>
+          </div>
+        </div>
+        
+        <div class="quiz-topics">
+          <h3>Topics Covered</h3>
+          <div class="topics-grid">
+            <div class="topic-item">
+              <div class="topic-icon"><i class="fab fa-js"></i></div>
+              <span>JavaScript</span>
+            </div>
+            <div class="topic-item">
+              <div class="topic-icon"><i class="fab fa-html5"></i></div>
+              <span>HTML5</span>
+            </div>
+            <div class="topic-item">
+              <div class="topic-icon"><i class="fab fa-css3-alt"></i></div>
+              <span>CSS3</span>
+            </div>
+            <div class="topic-item">
+              <div class="topic-icon"><i class="fab fa-react"></i></div>
+              <span>React</span>
+            </div>
+            <div class="topic-item">
+              <div class="topic-icon"><i class="fab fa-node-js"></i></div>
+              <span>Node.js</span>
+            </div>
+            <div class="topic-item">
+              <div class="topic-icon"><i class="fas fa-database"></i></div>
+              <span>Databases</span>
+            </div>
+          </div>
+        </div>
+        
+        <button class="btn btn-primary start-quiz-btn" id="startQuizBtn">
+          <i class="fas fa-play"></i> Start Quiz
+        </button>
+      </div>
+    </div>
+    
+    <!-- Quiz Screen -->
+    <div class="quiz-screen" id="quizScreen" style="display: none;">
+      <div class="quiz-header">
+        <div class="quiz-progress">
+          <div class="progress-text">Question <span id="currentQuestion">1</span> of 10</div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+        <div class="quiz-timer">
+          <div class="timer-icon"><i class="fas fa-clock"></i></div>
+          <div class="timer-display" id="timerDisplay">5:00</div>
+        </div>
+      </div>
+      
+      <div class="quiz-content" id="quizContent">
+        <!-- Question content will be dynamically inserted here -->
+      </div>
+      
+      <div class="quiz-navigation">
+        <button class="btn btn-outline" id="prevBtn" disabled>
+          <i class="fas fa-arrow-left"></i> Previous
+        </button>
+        <button class="btn btn-primary" id="nextBtn">
+          Next <i class="fas fa-arrow-right"></i>
+        </button>
+        <button class="btn btn-primary" id="submitBtn" style="display: none;">
+          Submit Quiz <i class="fas fa-check"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Results Screen -->
+    <div class="quiz-screen" id="resultsScreen" style="display: none;">
+      <div class="quiz-results">
+        <div class="results-header">
+          <h1>Quiz Results</h1>
+        </div>
+        
+        <div class="results-summary">
+          <div class="results-score">
+            <div class="score-circle">
+              <div class="score-number" id="scoreNumber">0</div>
+              <div class="score-text">out of 10</div>
+            </div>
+          </div>
+          
+          <div class="results-details">
+            <div class="result-detail-item">
+              <div class="detail-icon correct"><i class="fas fa-check"></i></div>
+              <div class="detail-text">
+                <span id="correctAnswers">0</span> Correct Answers
+              </div>
+            </div>
+            <div class="result-detail-item">
+              <div class="detail-icon incorrect"><i class="fas fa-times"></i></div>
+              <div class="detail-text">
+                <span id="incorrectAnswers">0</span> Incorrect Answers
+              </div>
+            </div>
+            <div class="result-detail-item">
+              <div class="detail-icon time"><i class="fas fa-clock"></i></div>
+              <div class="detail-text">
+                <span id="timeTaken">0:00</span> Time Taken
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="results-message" id="resultsMessage">
+          <!-- Results message will be dynamically inserted here -->
+        </div>
+        
+        <div class="results-buttons">
+          <button class="btn btn-outline" id="reviewBtn">
+            <i class="fas fa-search"></i> Review Answers
+          </button>
+          <button class="btn btn-primary" id="retryBtn">
+            <i class="fas fa-redo"></i> Try Again
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Review Screen -->
+    <div class="quiz-screen" id="reviewScreen" style="display: none;">
+      <div class="review-header">
+        <h1>Review Answers</h1>
+        <button class="btn btn-outline back-btn" id="backToResultsBtn">
+          <i class="fas fa-arrow-left"></i> Back to Results
+        </button>
+      </div>
+      
+      <div class="review-content" id="reviewContent">
+        <!-- Review content will be dynamically inserted here -->
+      </div>
+    </div>
+  </div>
+  
+  <!-- Exit Quiz Button -->
+  <button class="exit-quiz-btn" id="exitQuizBtn">
+    <i class="fas fa-home"></i> Exit Quiz
+  </button>
+  
+  <!-- Exit Confirmation Modal -->
+  <div class="modal" id="exitModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Exit Quiz?</h2>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to exit the quiz? All your progress will be lost.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" id="cancelExitBtn">
+          <i class="fas fa-times"></i> Cancel
+        </button>
+        <a href="index.html" class="btn btn-primary">
+          <i class="fas fa-home"></i> Exit to Home
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html">Portfolio</a>
+        </div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="quiz.html" class="active">Quiz</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <a href="#" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Portfolio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>

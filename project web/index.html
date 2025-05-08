@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrew Chahine | Personal Portfolio</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">Portfolio</a>
+        </div>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <div class="user-switcher" id="userSwitcher">
+            <button class="user-switch-btn" id="userSwitchBtn">
+              <i class="fas fa-user-circle"></i>
+              <span id="currentUser">Andrew Chahine</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="user-dropdown" id="userDropdown">
+              <div class="user-option active" data-username="Andrew Chahine">
+                <i class="fas fa-user"></i>
+                <span>Andrew Chahine</span>
+              </div>
+              <div class="user-option" data-username="Elie Matta">
+                <i class="fas fa-user"></i>
+                <span>Elie Matta</span>
+              </div>
+              <div class="user-option" data-username="John Aoun"> 
+                <i class="fas fa-user"></i>
+                <span>John Aoun</span> 
+              </div>
+            </div>
+          </div>
+
+          
+          
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-list">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li class="mobile-extras">
+        <a href="cv.html">View CV</a>
+        <a href="quiz.html">Take Quiz</a>
+        <a href="schedule.html">My Schedule</a>
+      </li>
+    </ul>
+  </div>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Hi, I'm <span class="highlight">Andrew Chahine</span></h1>
+          <h2>Computer Science Student</h2>
+          <p>I'm a motivated computer science student with excellent communication skills and a positive, adaptable attitude.</p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+			<audio controls>
+		  <source src="audio/backgroundmusic.mp3" type="audio/mpeg">
+		</audio>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="image-container">
+            <img src="images/user1.jpg" alt="Andrew Chahine" id="profileImage">
+            <div class="image-backdrop"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scrolldown">
+      <a href="#about"><i class="fas fa-chevron-down pulse"></i></a>
+    </div>
+  </section>
+
+  <section class="about section-padding" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h3 class="section-subtitle">Get to know me</h3>
+        <h2 class="section-title">About Me</h2>
+        <div class="separator"></div>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p>I'm a motivated computer science student with excellent communication skills and a positive, adaptable attitude. Comfortable in fast-paced environments and skilled at working both independently and as part of a team.</p>
+          <p>Known for being reliable, friendly, and dedicated to delivering outstanding service. Always ready to go the extra mile to ensure a great customer experience.</p>
+          <p>Currently pursuing my Bachelor's degree in Computer Science at Holy Spirit University of Kaslik while gaining practical experience through various activities and projects.</p>
+          <div class="about-btns">
+            <a href="cv.html" class="btn btn-secondary">View My CV</a>
+            <a href="schedule.html" class="btn btn-outline">Check My Schedule</a>
+          </div>
+        </div>
+        <div class="about-info">
+          <ul class="info-list">
+            <li>
+              <span class="info-label"><i class="fas fa-calendar-alt"></i> Birthday:</span>
+              <span class="info-value">August 12, 2004</span>
+            </li>
+            <li>
+              <span class="info-label"><i class="fas fa-graduation-cap"></i> Education:</span>
+              <span class="info-value">Bachelor's in Computer Science (in progress)</span>
+            </li>
+            <li>
+              <span class="info-label"><i class="fas fa-map-marker-alt"></i> Location:</span>
+              <span class="info-value">Jeita, Lebanon</span>
+            </li>
+            <li>
+              <span class="info-label"><i class="fas fa-envelope"></i> Email:</span>
+              <span class="info-value">andrewchahine24@gmail.com</span>
+            </li>
+            <li>
+              <span class="info-label"><i class="fas fa-phone"></i> Phone:</span>
+              <span class="info-value">+961 71 818 789</span>
+            </li>
+            <li>
+              <span class="info-label"><i class="fas fa-language"></i> Languages:</span>
+              <span class="info-value">Arabic, English, French</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills section-padding" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <h3 class="section-subtitle">What I'm good at</h3>
+        <h2 class="section-title">My Skills</h2>
+        <div class="separator"></div>
+      </div>
+      <div class="skills-content">
+        <div class="skill-groups">
+          <div class="skill-group">
+            <h3 class="skill-group-title"><i class="fas fa-code"></i> Professional Skills</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <h4>Professionalism</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="90"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <h4>Organization Skills</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <h4>Multitasking</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="80"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <h4>Communication Skills</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="95"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3 class="skill-group-title"><i class="fas fa-pencil-ruler"></i> Personal Qualities</h3>
+            <div class="skills-grid">
+              <div class="skill-item">
+                <h4>Stress Management</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <h4>Fast Learner</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="90"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <h4>Attention to Detail</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <h4>Teamwork</h4>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="90"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects section-padding" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <h3 class="section-subtitle">My recent work</h3>
+        <h2 class="section-title">Projects</h2>
+        <div class="separator"></div>
+      </div>
+      <div class="projects-content">
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="academic">Academic</button>
+          <button class="filter-btn" data-filter="personal">Personal Projects</button>
+          <button class="filter-btn" data-filter="web">Web Development</button>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card" data-category="web">
+            <div class="project-image">
+              <img src="images/project1.jpg" alt="Project 1">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                  <a href="#" class="project-github"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h4 class="project-title">Personal Portfolio Website</h4>
+              <div class="project-category">Web Development</div>
+              <p class="project-description">A responsive personal website showcasing my skills, projects, and professional experience.</p>
+              <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card" data-category="academic">
+            <div class="project-image">
+              <img src="images/project2.jpg" alt="Project 2">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="#" class="project-link"><i class="fas fa-link"></i></a>
+                  <a href="#" class="project-github"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <h4 class="project-title">University Course Projects</h4>
+              <div class="project-category">Academic</div>
+              <p class="project-description">Various computer science assignments and projects completed as part of my academic curriculum.</p>
+              <div class="project-tech">
+                <span>Programming</span>
+                <span>Problem Solving</span>
+                <span>Data Structures</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quiz-teaser section-padding">
+    <div class="container">
+      <div class="quiz-teaser-content">
+        <div class="quiz-teaser-text">
+          <h2>Test Your Knowledge</h2>
+          <p>Think you know your programming concepts? Take my interactive quiz to test your knowledge about computer science, programming languages, and software design principles.</p>
+          <a href="quiz.html" class="btn btn-primary">Take the Quiz</a>
+        </div>
+        <div class="quiz-teaser-image">
+          <video controls width="400"> 
+		  <source src="videos/QuizVideo.mp4" type="video/mp4">
+		  </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact section-padding" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h3 class="section-subtitle">Get in touch</h3>
+        <h2 class="section-title">Contact Me</h2>
+        <div class="separator"></div>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-info-header">
+            <h3>Let's connect</h3>
+            <p>Feel free to reach out if you have any questions, project ideas, or just want to say hello!</p>
+          </div>
+          <ul class="contact-info-list">
+            <li>
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Location</h4>
+                <p>Jeita, Lebanon</p>
+              </div>
+            </li>
+            <li>
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <p><a href="mailto:andrewchahine24@gmail.com">andrewchahine24@gmail.com</a></p>
+              </div>
+            </li>
+            <li>
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Phone</h4>
+                <p><a href="tel:+96171818789">+961 71 818 789</a></p>
+              </div>
+            </li>
+          </ul>
+          <div class="social-links">
+            <a href="#" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="contact-form-container">
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group full-width">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html">Portfolio</a>
+        </div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="research.html">Research</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <a href="#" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="#" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Andrew Chahine. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollToTop" class="scroll-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="main.js"></script>
+</body>
+</html>
