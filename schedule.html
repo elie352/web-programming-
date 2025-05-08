@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Weekly Schedule</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="schedule.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html">Portfolio</a>
+        </div>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <div class="user-switcher" id="userSwitcher">
+            <button class="user-switch-btn" id="userSwitchBtn">
+              <i class="fas fa-user-circle"></i>
+              <span id="currentUser">Andrew Chahine</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="user-dropdown" id="userDropdown">
+              <div class="user-option active" data-username="Andrew Chahine"><i class="fas fa-user"></i><span>Andrew Chahine</span></div>
+              <div class="user-option" data-username="Elie Matta"><i class="fas fa-user"></i><span>Elie Matta</span></div>
+              <div class="user-option" data-username="John Aoun"><i class="fas fa-user"></i><span>John Aoun</span></div>
+            </div>
+          </div>
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+     <ul class="mobile-nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li class="mobile-extras">
+        <a href="cv.html">View CV</a>
+        <a href="quiz.html">Take Quiz</a>
+        <a href="schedule.html" class="active">My Schedule</a>
+      </li>
+    </ul>
+  </div>
+
+  <section class="schedule-header">
+    <div class="container">
+      <div class="schedule-header-content">
+        <h1>My Weekly Schedule</h1>
+        <p>Here's how I organize my week, balancing work, studies, and personal projects</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="schedule-section section-padding">
+    <div class="container">
+      <div class="schedule-controls">
+        <div class="semester-selector">
+          <label for="semesterSelect">Select Semester:</label>
+          <select id="semesterSelect" class="semester-select">
+            <option value="spring2025">Spring 2025</option>
+            <option value="fall2024" selected>Fall 2024</option>
+            <option value="summer2024">Summer 2024</option>
+          </select>
+        </div>
+        <div class="schedule-legend">
+          <div class="legend-item"><span class="legend-color work"></span><span>Work</span></div>
+          <div class="legend-item"><span class="legend-color class"></span><span>Classes</span></div>
+          <div class="legend-item"><span class="legend-color research"></span><span>Research</span></div>
+          <div class="legend-item"><span class="legend-color personal"></span><span>Personal</span></div>
+        </div>
+      </div>
+
+      <div class="schedule-container">
+        <div class="time-labels">
+          <div class="time-label">8:00 AM</div> <div class="time-label">9:00 AM</div>
+          <div class="time-label">10:00 AM</div><div class="time-label">11:00 AM</div>
+          <div class="time-label">12:00 PM</div><div class="time-label">1:00 PM</div>
+          <div class="time-label">2:00 PM</div> <div class="time-label">3:00 PM</div>
+          <div class="time-label">4:00 PM</div> <div class="time-label">5:00 PM</div>
+          <div class="time-label">6:00 PM</div> <div class="time-label">7:00 PM</div>
+          <div class="time-label">8:00 PM</div>
+        </div>
+
+        <div class="schedule-grid" id="scheduleGrid">
+          <div class="day-header">Monday</div> <div class="day-header">Tuesday</div>
+          <div class="day-header">Wednesday</div><div class="day-header">Thursday</div>
+          <div class="day-header">Friday</div>   <div class="day-header weekend">Saturday</div>
+          <div class="day-header weekend">Sunday</div>
+
+          <div class="day-column" data-day="monday"></div>
+          <div class="day-column" data-day="tuesday"></div>
+          <div class="day-column" data-day="wednesday"></div>
+          <div class="day-column" data-day="thursday"></div>
+          <div class="day-column" data-day="friday"></div>
+          <div class="day-column weekend" data-day="saturday"></div>
+          <div class="day-column weekend" data-day="sunday"></div>
+
+        </div>
+      </div>
+
+      <div class="schedule-notes">
+        <div class="notes-header"><h2>Schedule Notes</h2></div>
+        <div class="notes-content"></div>
+      </div>
+    </div>
+  </section>
+
+   <div class="event-modal" id="eventModal"></div>
+
+  <section class="schedule-cta">
+    <div class="container">
+      <div class="schedule-cta-content">
+        <h2>Looking to Connect?</h2>
+        <p>Check my availability and schedule a meeting that works for both of us.</p>
+        <a href="index.html#contact" class="btn btn-primary">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo"><a href="index.html">Portfolio</a></div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="schedule.html" class="active">Schedule</a></li>
+            <li><a href="research.html">Research</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+           <a href="#" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+           <a href="#" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+           <a href="#" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+           <a href="#" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+         </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Andrew Chahine. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollToTop" class="scroll-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="main.js"></script>
+  <script src="schedule.js"></script>
+</body>
+</html>
